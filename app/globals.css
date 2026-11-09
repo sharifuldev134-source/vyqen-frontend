@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #140a04;
+    --bg-secondary: #211107;
+    --accent-orange: #ea580c;
+    --accent-amber: #f59e0b;
+    --text-primary: #fef7ee;
+    --text-muted: #d4a373;
+  }
+
+  body {
+    background-color: #140a04;
+    color: #fef7ee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom ambient glowing lamp effect */
+.lamp-glow {
+  box-shadow: 0 0 80px 20px rgba(234, 88, 12, 0.25);
+}
+
+.lamp-halo {
+  background: radial-gradient(circle at center, rgba(249, 115, 22, 0.35) 0%, rgba(234, 88, 12, 0.12) 45%, transparent 70%);
+}
+
+.terracotta-gradient {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 50%, #9a3412 100%);
+}
+
+.warm-mesh {
+  background-color: #140a04;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(234, 88, 12, 0.22) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.18) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(194, 65, 12, 0.12) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(234, 88, 12, 0.2) 0px, transparent 50%);
+}
+
+@keyframes pulseWarmth {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-warmth {
+  animation: pulseWarmth 6s ease-in-out infinite;
+}
