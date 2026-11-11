@@ -7,6 +7,7 @@ import { PRODUCTS } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { HotspotLookbook } from "@/components/HotspotLookbook";
 import { PullCordLamp } from "@/components/PullCordLamp";
+import { LampCarousel3D } from "@/components/LampCarousel3D";
 import {
   LampIcon,
   SparklesIcon,
@@ -146,79 +147,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. CURATED CATEGORY SPOTLIGHT */}
+      {/* 2. CURATED CATEGORY SPOTLIGHT — 3D 7-LAMP ATELIER CAROUSEL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
-          <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-orange-400 font-semibold">
-              Curated Typologies
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-light text-stone-100 mt-2">
-              Forms of Luminescence
-            </h2>
-          </div>
-          <Link
-            href="/products"
-            className="text-xs uppercase tracking-widest text-orange-400 hover:text-orange-300 font-medium inline-flex items-center gap-1.5 mt-3 md:mt-0"
-          >
-            <span>View Full Catalog</span>
-            <ArrowRightIcon className="w-4 h-4" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              title: "Table Lamps",
-              count: "4 Designs",
-              img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80",
-              link: "/products?category=Table+Lamp",
-            },
-            {
-              title: "Pendant Chandeliers",
-              count: "3 Designs",
-              img: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80",
-              link: "/products?category=Pendant+Light",
-            },
-            {
-              title: "Sculptural Floor Arcs",
-              count: "2 Designs",
-              img: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80",
-              link: "/products?category=Floor+Lamp",
-            },
-            {
-              title: "Wall Sconces & Art",
-              count: "3 Designs",
-              img: "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?auto=format&fit=crop&w=600&q=80",
-              link: "/products?category=Wall+Sconce",
-            },
-          ].map((cat) => (
-            <Link
-              key={cat.title}
-              href={cat.link}
-              className="group relative aspect-[3/4] rounded-3xl overflow-hidden bg-stone-900 border border-orange-500/20 shadow-xl transition-all hover:border-orange-500/60 hover:shadow-orange-950/40"
-            >
-              <Image
-                src={cat.img}
-                alt={cat.title}
-                fill
-                className="object-cover group-hover:scale-108 transition-transform duration-700"
-                sizes="(max-width: 640px) 100vw, 300px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent" />
-              <div className="absolute inset-0 bg-orange-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-              <div className="absolute bottom-6 inset-x-6">
-                <span className="text-[11px] uppercase tracking-wider text-orange-400 font-medium">
-                  {cat.count}
-                </span>
-                <h3 className="font-serif text-xl font-normal text-stone-100 mt-1 group-hover:text-amber-200 transition-colors">
-                  {cat.title}
-                </h3>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <LampCarousel3D />
       </section>
 
       {/* 3. FEATURED MASTERPIECES */}
